@@ -8,10 +8,12 @@ module.exports = new datafire.Action({
     type: "string"
   }, {
     title: "emailAddress",
-    type: "string"
+    type: "string",
+    pattern: ".*@.*\\..*",
+    maxLength: 254
   }],
   handler: (input, context) => {
     return datafire.flow(context)
-      .then(_ => google_gmail.users.messages.send({}, context))
+      .then(_ => google_gmail.buildMessage({}, context))
   },
 });
