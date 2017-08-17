@@ -5,7 +5,8 @@ var google_gmail = require('@datafire/google_gmail').actions;
 module.exports = new datafire.Action({
   inputs: [{
     title: "message",
-    type: "string"
+    type: "string",
+    maxLength: 5000
   }, {
     title: "emailAddress",
     type: "string",
@@ -15,14 +16,16 @@ module.exports = new datafire.Action({
   handler: (input, context) => {
     return datafire.flow(context)
       .then(_ => google_gmail.buildMessage({
-        to: "me@company.com",
-        from: "no-reply@company.com",
+        to: "bobby.brennan@gmail.com",
+        from: "datafire.no-reply@gmail.com",
         subject: "A new message from " + input.emailAddress,
         body: input.message,
       }, context))
       .then(encodedMessage => google_gmail.users.messages.send({
-        userId: me,
-        body: {},
+        userId: "me",
+        body: {
+          raw: encodedMessage,
+        },
       }, context))
   },
 });
