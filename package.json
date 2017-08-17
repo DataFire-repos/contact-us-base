@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "@datafire/google_gmail": "2.0.2"
-  }
+    "@datafire/google_gmail": "2.1.0"
+  },
+  "name": "contact-us-base",
+  "version": "1.0.0"
 }
