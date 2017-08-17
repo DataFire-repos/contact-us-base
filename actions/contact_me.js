@@ -20,5 +20,9 @@ module.exports = new datafire.Action({
         subject: "A new message from " + input.emailAddress,
         body: input.message,
       }, context))
+      .then(encodedMessage => google_gmail.users.messages.send({
+        userId: me,
+        body: {},
+      }, context))
   },
 });
