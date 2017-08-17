@@ -14,6 +14,11 @@ module.exports = new datafire.Action({
   }],
   handler: (input, context) => {
     return datafire.flow(context)
-      .then(_ => google_gmail.buildMessage({}, context))
+      .then(_ => google_gmail.buildMessage({
+        to: "me@company.com",
+        from: "no-reply@company.com",
+        subject: "A new message from " + input.emailAddress,
+        body: input.message,
+      }, context))
   },
 });
