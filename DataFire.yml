@@ -1,0 +1,4 @@
+options:
+  cors: true
+actions:
+  contact_me: ./actions/contact_me.js
