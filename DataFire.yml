@@ -2,3 +2,10 @@ options:
   cors: true
 actions:
   contact_me: ./actions/contact_me.js
+setup:
+  accounts:
+    google_gmail:
+      description: Connect a Gmail account to send e-mails.
+      integration: google_gmail
+      scopes:
+        - 'https://www.googleapis.com/auth/gmail.send'
