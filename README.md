@@ -21,11 +21,11 @@ datafire serve
 
 ## Using the API
 
-There is one URL for this API - `POST /contact`. It accepts both urlencoded and JSON bodies.
+There is one URL for this API - `POST /contact`. It accepts both urlencoded and JSON content.
 
 If you're running your project on DataFire.io, replace `http://localhost:3000` with your project's host, e.g. `https://project-name.prod.with-datafire.io`.
 
-## HTML form
+### HTML form
 ```html
 <form action="http://localhost:3000/contact" method="post">
   <input type="text" name="emailAddress">
@@ -33,7 +33,7 @@ If you're running your project on DataFire.io, replace `http://localhost:3000` w
 </form>
 ```
 
-## cURL
+### cURL
 ```bash
 curl -X POST "http://localhost:3000/contact" \
   -d 'message=hi&emailAddress=me@example.com'
