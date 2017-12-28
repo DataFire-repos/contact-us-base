@@ -12,5 +12,6 @@ To run this project manually:
 git clone https://github.com/DataFire-repos/contact-us-base
 cd contact-us-base
 npm install
+datafire authenticate google_gmail
 datafire serve
 ```
