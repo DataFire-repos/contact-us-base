@@ -9,3 +9,8 @@ setup:
       integration: google_gmail
       scopes:
         - 'https://www.googleapis.com/auth/gmail.send'
+paths:
+  /contact:
+    post:
+      action: contact_me
+      accounts: {}
