@@ -13,19 +13,15 @@ module.exports = new datafire.Action({
     pattern: ".*@.*\\..*",
     maxLength: 254
   }],
-  handler: (input, context) => {
-    return datafire.flow(context)
-      .then(_ => google_gmail.buildMessage({
-        to: "bobby.brennan@gmail.com",
-        from: "datafire.no-reply@gmail.com",
+  handler: async (input, context) => {
+    let user = await google_gmail.users.getProfile(null, context);
+    let message = await google_gmail.buildMessage({
+        to: user.userId,
+        from: user.userId,
         subject: "A new message from " + input.emailAddress,
         body: input.message,
-      }, context))
-      .then(encodedMessage => google_gmail.users.messages.send({
-        userId: "me",
-        body: {
-          raw: encodedMessage,
-        },
-      }, context))
+    }, context));
+    let sent = google_gmail.users.messages.send({userId: "me", body: {raw: message}}, context);
+    return "Success";
   },
 });
