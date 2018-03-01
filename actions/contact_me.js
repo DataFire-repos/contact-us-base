@@ -21,7 +21,7 @@ module.exports = new datafire.Action({
         subject: "A new message from " + input.emailAddress,
         body: input.message,
     }, context);
-    let sent = google_gmail.users.messages.send({userId: "me", body: {raw: message}}, context);
+    let sent = await google_gmail.users.messages.send({userId: "me", body: {raw: message}}, context);
     return "Success";
   },
 });
