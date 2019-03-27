@@ -12,8 +12,6 @@ This project creates a backend for a "Contact Us" form. It uses a Gmail account 
 * Select `prod`
 * Click "Deploy Project"
 
-Then deploy your project to `prod`.
-
 ## Running Manually
 
 To run this project manually:
