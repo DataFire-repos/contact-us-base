@@ -8,6 +8,8 @@ This project creates a backend for a "Contact Us" form. It uses a Gmail account 
 * Go to the **Integrations** tab, and add a new Gmail account.
 * Select the `https://www.googleapis.com/auth/gmail.send` scope.
 * Click "Add Account" and log into the Gmail account you want to send messages from
+* Navigate to the **Actions** tab, and click on `contact_me`
+* Replace `YOUR_EMAIL@gmail.com` with your own email address
 * Click "Deploy"
 * Select `prod`
 * Click "Deploy Project"
@@ -21,6 +23,8 @@ git clone https://github.com/DataFire-repos/contact-us-base
 cd contact-us-base
 npm install
 datafire authenticate google_gmail
+# Choose the gmail.send scope
+# Edit ./actions/contact_me.js and replace YOUR_EMAIL@gmail.com with your email address
 datafire serve
 ```
 

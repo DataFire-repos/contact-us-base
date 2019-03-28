@@ -14,10 +14,9 @@ module.exports = new datafire.Action({
     maxLength: 254
   }],
   handler: async (input, context) => {
-    let user = await google_gmail.users.getProfile({userId: 'me'}, context);
     let message = await google_gmail.buildMessage({
-        to: user.emailAddress,
-        from: user.emailAddress,
+        to: "YOUR_EMAIL@gmail.com",
+        from: "YOUR_EMAIL@gmail.com",
         subject: "A new message from " + input.emailAddress,
         body: input.message,
     }, context);
